@@ -367,8 +367,9 @@ Important concepts from Sass to read through:
     handleSubmit
     }
     ```
-- In client/views/index.html, confirm that the custom handleSubmit() function references the newly created Client library, as:
-         ```<section>
+- In client/views/index.html, confirm that the custom handleSubmit() function references the newly created Client library, as:  
+         ```
+         <section>
              <form class="" onsubmit="return Client.handleSubmit(event)">
                  <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
                  <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
@@ -379,7 +380,7 @@ Important concepts from Sass to read through:
     ```
     Client.checkForName(formText)
     ```
-Change the port number in the fetch request in the formHandler.js to 8081 (The change in ports is to be able to have the Development server and the production server run at the same time.
+- Change the port number in the fetch request in the formHandler.js to 8081 (The change in ports is to be able to have the Development server and the production server run at the same time.
     ```
     fetch('http://localhost:8081/test')
     .then(res => {
@@ -389,7 +390,7 @@ Change the port number in the fetch request in the formHandler.js to 8081 (The c
         document.getElementById('results').innerHTML = data.message
     })
     ```
-Change the port number in server/index.js to 8081 as well:
+- Change the port number in server/index.js to 8081 as well:
     ```
     // designates what port the app will listen to for incoming requests
     app.listen(8081, function () {
