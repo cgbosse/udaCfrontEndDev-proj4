@@ -1,5 +1,26 @@
 # Steps to be taken to set up Webpack
 
+## Important Note on the NodeJS Version for this Project
+Udacity created this project with an old version of NODE.
+To avoid problems use the previous NODE version 11.15.0.
+In order to be able to use it and downgrad or upgrade your version here is a good article on the topic: <https://heynode.com/tutorial/install-nodejs-locally-nvm/>
+
+### A)  Essentially the steps are the following in terminal - you will need administrator rights:
+
+1. To list your installed NODE versions:
+    ```
+    nvm ls 
+    ```
+2. To install the version you require in this case 11.15.0:
+    ```
+    nvm install 11.15.0
+    ```
+3. Once installed select it:
+    ```
+    nvm use 11.15.0
+    ```
+
+## Configuring SASS
 These are the steps to set up Webpack following the indications from the course, starting out with the base installation as per branch Stage 01 following the rubric.
 
 Already installed packages in the course boiler plate:
@@ -320,7 +341,7 @@ Important concepts from Sass to read through:
 - Sass Documentation -- <https://sass-lang.com/documentation>
 - Learn to style HTML using CSS -- <https://developer.mozilla.org/en-US/docs/Learn/CSS>
 
-### Lesson 3 - Sass
+### Lesson 4 - Fixing Functionality
 
 1. Fixing the apps functionality:
 
