@@ -1,5 +1,6 @@
 import { checkForName } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
+import { handleSubmitApi } from './js/formHandlerApi'
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -8,11 +9,14 @@ import './styles/form.scss'
 import './styles/header.scss'
 
 console.log(checkForName);
+console.log(handleSubmit);
+console.log(handleSubmitApi);
 
 alert("I EXIST")
 console.log("CHANGE!!");
 
 export {
     checkForName,
-    handleSubmit
+    handleSubmit,
+    handleSubmitApi
     }

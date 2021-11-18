@@ -22,6 +22,7 @@
         </header>
 
         <main>
+           
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
@@ -33,7 +34,22 @@
                 <strong>Form Results:</strong>
                 <div id="results"></div>
             </section>
+        
+        <!-- Section Duplicated for testing the API Text Submission --> 
+        
+            <section>
+                <form class="" onsubmit="return Client.handleSubmitApi(event)">
+                    <input id="textForApi" type="text" name="input" value="" onblur="onBlur()" placeholder="Text For Api Sentiment Analysis">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmitApi(event)" onsubmit="return handleSubmitApi(event)">
+                </form>
+            </section>
+
+            <section>
+                <strong>Form Results:</strong>
+                <div id="resultsApi"></div>
+            </section>
         </main>
+
 
         <footer>
             <p>This is a footer</p>
