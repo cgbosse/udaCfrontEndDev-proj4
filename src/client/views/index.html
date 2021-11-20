@@ -18,41 +18,67 @@
             </div>
             <div class="">
                 navigation
+                <div class="inlineflex">
+                    <div class="inlineflexitem">
+                        UDACITY
+                    </div>
+                    <div class="inlineflexitem">
+                        GitHub Repository
+                    </div>        
+                </div>
             </div>
         </header>
-
+        
         <main>
-           
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            </section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        
         <!-- Section Duplicated for testing the API Text Submission --> 
-        
+
+            <div>
+                <div class="title">
+                    <h1>
+                        Sentiment Analysis for Texts
+                    </h1>
+                </div>
+                <div class="title">
+                    <h2>
+                        Using the MeaningCloud API
+                    </h2>
+                </div>
+            </div>
             <section>
-                <form class="" onsubmit="return Client.handleSubmitApi(event)">
-                    <input id="textForApi" type="text" name="input" value="" onblur="onBlur()" placeholder="Text For Api Sentiment Analysis">
+                <form id ="input_form"  class="" onsubmit="return Client.handleSubmitApi(event)">
+                    <textarea id="textForApi" type="text" name="input" value="" onblur="onBlur()" placeholder="Text For Api Sentiment Analysis"  rows="25" form="input_form"></textarea>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmitApi(event)" onsubmit="return handleSubmitApi(event)">
                 </form>
             </section>
-
-            <section>
-                <strong>Form Results:</strong>
-                <div id="resultsApi"></div>
+            <section class="results">
+                <h3>Form Results</h3>
+                <div class="resultsbox">
+                    <div id="resultsApi" class="resultsboxitem">
+                    a
+                    </div>
+                    <div id="resultsApi" class="resultsboxitem">
+                        a
+                    </div>
+                </div>
             </section>
         </main>
 
 
         <footer>
-            <p>This is a footer</p>
+            <div class="inlineflex">
+                <div class="inlineflexitem">
+                    GITHUB
+                </div>
+                <div class="inlineflexitem">
+                    MeaningCloud
+                </div>
+                <div class="inlineflexitem">
+                    WEBPACK
+                </div>
+                <div class="inlineflexitem">
+                    NODE.JS
+                </div>        
+            </div> 
         </footer>
 
         <!-- L2 Step 8 --> 

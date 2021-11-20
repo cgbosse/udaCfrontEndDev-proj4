@@ -81,13 +81,19 @@ app.get('/textToAnalyze', function (req, res) {
 });
 
 
+app.get('/apiResponseJson', function (req, res) {
+    res.send(apiResponseJson);
+    console.log("Sending Response from Server /apiResponseJson with the meaningCloud response object.")    
+});
+
+
 
 // CB -- Create log of data for sending call to the API
 // ---------- POST method route ---------- 
 //---- App variable for data returned by the website app.
 
-
 let textToAnalyze = "";
+apiResponseJson = {};
 
 app.post('/textToAnalyze', clientData);
 
@@ -102,35 +108,58 @@ function clientData (req, res) {
 };
 
  // ---------------- Function for Sentiment Analysis --------------
- function sentiment(text2) {
+ async function sentiment(text2) {
 
     // Boiler Template MeaningCloud
 
     console.log("Inside sentiment(): " + text2);
 
     const formdata = new FormData();
-    formdata.append("key", "705753b56f221e17f79c742261cf50f4");
+    formdata.append("key", mcloudApi.application_key);
     formdata.append("txt", text2);
     formdata.append("lang", "en");  // 2-letter code, like en es fr ...
 
     console.log(formdata);
 
     const requestOptions = {
-    method: 'POST',
-    body: formdata,
-    redirect: 'follow'
+        method: 'POST',
+        body: formdata,
+        redirect: 'follow'
     };
 
-    const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+
+    const response = await fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions);
+   
+    try {
+        apiResponseJson = await response.json();
+        console.log(":::::::::::::::: apiResponseJson RESPONSE Json ::::::::::::::::");
+        console.log(apiResponseJson);
+        //return apiResponseJson;
+    }
+    catch(error) {
+        console.log('error', error);
+    }
+    /*
     .then(response => ({
         status: response.status, 
         body: response.json()
     }))
-    .then(({ status, body }) => console.log(status, body))
+    //.then(({ status, body }) => console.log(status, body))
+    .then(({ status, body }) => console.log("Status :::::" + status + "\nBody :::::" + body))
     .catch(error => console.log('error', error));
-
-    // Boiler template end
-   
+    */
+/*
+    console.log("::::::::::::::::RESPONSE::::::::::::::::");
     console.log(response);
+    
+    (function(response) {
+        apiResponseJson = response.json();
+    })();
+
+    console.log("::::::::::::::::RESPONSE::::::::::::::::");
+    console.log(apiResponseJson);
+
+    return response
+*/
 };
 

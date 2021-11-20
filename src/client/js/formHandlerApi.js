@@ -29,7 +29,7 @@ const postData = async ( url = '', data = {})=>{
   });
     try {
       const newData = await response.json();
-      //console.log('Posting New Data: ' + newData);
+      console.log('Posting New Data: ' + newData);
       return newData;
     }catch(error) {
     console.log("error", error);

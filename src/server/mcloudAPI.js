@@ -1,6 +1,6 @@
 
 const formdata = new FormData();
-formdata.append("key", "705753b56f221e17f79c742261cf50f4");
+formdata.append("key", "MYKEY");
 formdata.append("txt", "Bruce Lee is recognized as a legend of martial Arts. His skill was extreme and his legacy remains.");
 formdata.append("lang", "en");  // 2-letter code, like en es fr ...
 

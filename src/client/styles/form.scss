@@ -2,6 +2,8 @@ form {
     border: 1px solid #545454;
     border-radius: 3px;
     padding: 40px;
+    background-color: yellowgreen;
+    min-height: 400px;
 }
 
 input {
@@ -9,4 +11,48 @@ input {
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+    background-color: darkgreen;
+    color: white;
+}
+
+form input[type="submit"] { 
+    font-size: 16px;
+    background-color: tomato;
+
+}
+
+form textarea { 
+    width: 100%;
+    rows: 50;
+}
+
+#resultsApi {
+    border-style: solid;
+    border: 1px;
+    border-color: green;
+    width: 100%;
+    background-color: yellow;
+}
+
+.resultsbox {
+    max-width: 900px;
+    border-style: solid;
+    border: 1px;
+    border-color: yellowgreen;
+    background-color: yellowgreen;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.resultsboxitem {
+    flex-grow: 1 ;
+    align-items: stretch;
+}
+
+.results {
+    border-style: dotted;
+    padding: auto;
+    background-color: orange;
+
 }
