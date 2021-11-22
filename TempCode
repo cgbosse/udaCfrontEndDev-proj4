@@ -1,0 +1,75 @@
+function handleSubmitApi(event) {
+    event.preventDefault()
+
+    // Check what text was put into the form field
+    let formText = document.getElementById('textForApi').value;
+    let formTextJson = {formText};
+    console.log("::: Form content obtained :::");
+
+    // Post data to the server
+    postData('/textToAnalyze', formTextJson);
+    
+    
+    // Get Api response JSON js object from the server.
+    getServerData();
+}
+    
+// .............Taken From proj 03...............
+// Async postData function to send the text and country to the server for him to call the API
+const postData = async ( url = '', data = {})=>{
+  console.log("::::::::::::Inside postData() posting app data::::::::::::: ");
+  console.log(data);
+
+    const response = await fetch(url, {
+        method: 'POST', 
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        // Body data type must match "Content-Type" header        
+        body: JSON.stringify(data), 
+  });
+    try {
+      const newData = await response.json();
+      console.log('::::::::::::Received  API Response New Data::::::::::::::::::::::::: ');
+      console.log(newData);
+      return newData;
+    }catch(error) {
+    console.log("error", error);
+    }
+};
+// ..........
+
+// ------------ Async - Get --------------------- 
+
+const getServerData = async ()=>{
+
+  const request = await fetch('/apiResponseJson'); 
+  try {
+  // 1. Transform into JSON
+  const serverApiResponse = await request.json();
+  
+  console.log(serverApiResponse);
+
+  // 2. Updating the Results Log's Holder HTML elements.
+  
+  // console.log('Creating last logs entries HTML');
+  document.getElementById('agreement').innerHTML = serverApiResponse.agreement;
+  document.getElementById('subjectivity').innerHTML = serverApiResponse.subjectivity;
+  document.getElementById('confidence').innerHTML = serverApiResponse.confidence;
+  document.getElementById('irony').innerHTML = serverApiResponse.irony;
+  }
+  catch(error) {
+    console.log("error", error);
+  }
+};
+
+// ------------ Clean field entries ------------ 
+function resetFields(){
+  document.getElementById('agreement').innerHTML = ' --------------------- ';
+  document.getElementById('subjectivity').innerHTML = ' --------------------- ';
+  document.getElementById('confidence').innerHTML = ' --------------------- ';
+  document.getElementById('irony').innerHTML = ' --------------------- ';
+};
+
+export { handleSubmitApi }

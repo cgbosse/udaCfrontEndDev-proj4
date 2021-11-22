@@ -47,16 +47,16 @@
             <section>
                 <form id ="input_form"  class="" onsubmit="return Client.handleSubmitApi(event)">
                     <textarea id="textForApi" type="text" name="input" value="" onblur="onBlur()" placeholder="Text For Api Sentiment Analysis"  rows="25" form="input_form"></textarea>
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmitApi(event)" onsubmit="return handleSubmitApi(event)">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmitApi(event)" onsubmit="return Client.handleSubmitApi(event)">
                 </form>
             </section>
             <section class="results">
                 <h3>Form Results</h3>
                 <div class="resultsbox">
-                    <div id="resultsApi" class="resultsboxitem">
-                    a
+                    <div class="resultsboxitem">
+                    Agreement
                     </div>
-                    <div id="resultsApi" class="resultsboxitem">
+                    <div id="agreement" class="resultsboxitem">
                         a
                     </div>
                 </div>

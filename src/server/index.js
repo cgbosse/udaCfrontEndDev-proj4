@@ -75,9 +75,8 @@ app.get('/testApi', function (req, res) {
 
 
 app.get('/textToAnalyze', function (req, res) {
-    //res.send(textToAnalyze);
-    res.send("textToAnalyze");
-    console.log("Sending Response from Server /testApi with the textToAnalyze")    
+    res.send(apiResponseJson);
+    console.log("Sending Response from Server from textToAnalyze")    
 });
 
 
@@ -95,16 +94,16 @@ app.get('/apiResponseJson', function (req, res) {
 let textToAnalyze = "";
 apiResponseJson = {};
 
-app.post('/textToAnalyze', clientData);
+app.post('/textToAnalyze', formData);
 
-function clientData (req, res) {
+function formData (req, res) {
     console.log("Start clientData post");
     console.log("Received Request Body: " + req.body);
     //Received object assigning to the 
     textToAnalyze = req.body.formText;
-    console.log("ClientData: " + textToAnalyze);
+    console.log("Formdata: " + textToAnalyze);
     sentiment(textToAnalyze);
-    //res.send("Posting client app data");
+    res.send(apiResponseJson);
 };
 
  // ---------------- Function for Sentiment Analysis --------------
@@ -127,14 +126,13 @@ function clientData (req, res) {
         redirect: 'follow'
     };
 
-
     const response = await fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions);
    
     try {
         apiResponseJson = await response.json();
         console.log(":::::::::::::::: apiResponseJson RESPONSE Json ::::::::::::::::");
         console.log(apiResponseJson);
-        //return apiResponseJson;
+        return apiResponseJson;
     }
     catch(error) {
         console.log('error', error);
