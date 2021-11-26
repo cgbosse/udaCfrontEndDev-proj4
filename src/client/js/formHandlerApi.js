@@ -7,14 +7,13 @@ function handleSubmitApi(event) {
     
   //Calls the postData function to post the form text to the server
   Client.postData('/textToAnalyze', formTextJson)
-    .then (Client.getServerData())
-    .then ((result) => {
-      console.log(":::::serverApiResults:::::");
-      console.log(result);
-      Client.serverApiResults(result);
-      //return logReceived
+    //.then (result => Client.getServerData(result))
+    .then (result => {
+        Client.serverApiResults(result);
+        return "Finished"
     })
-    .then (console.log("Done"))
+    .then (result => console.log(":::::::::Step 08 " + result + ":::::::::")
+    )
     ;
 }
 

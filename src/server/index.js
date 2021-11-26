@@ -97,21 +97,23 @@ apiResponseJson = {};
 app.post('/textToAnalyze', formData);
 
 function formData (req, res) {
-    console.log("Start clientData post");
+    console.log(":::::::::Step 02 :::::::::");
+    console.log(":::::::Starting formData::::::::");
     console.log("Received Request Body: " + req.body);
     //Received object assigning to the 
     textToAnalyze = req.body.formText;
     console.log("Formdata: " + textToAnalyze);
-    sentiment(textToAnalyze);
-    res.send(apiResponseJson);
+    sentiment(textToAnalyze)
+        .then(result => res.send(result))
+        
 };
 
  // ---------------- Function for Sentiment Analysis --------------
- async function sentiment(text2) {
+ let sentiment = async function(text2) {
 
     // Boiler Template MeaningCloud
-
-    console.log("Inside sentiment(): " + text2);
+    console.log(":::::::::Step 03 :::::::::");
+    console.log("::::Inside sentiment()::::::: " + text2);
 
     const formdata = new FormData();
     formdata.append("key", mcloudApi.application_key);
@@ -130,9 +132,10 @@ function formData (req, res) {
    
     try {
         apiResponseJson = await response.json();
+        console.log(":::::::::Step 04 :::::::::");
         console.log(":::::::::::::::: apiResponseJson RESPONSE Json ::::::::::::::::");
         console.log(apiResponseJson);
-        return apiResponseJson;
+        return apiResponseJson
     }
     catch(error) {
         console.log('error', error);
