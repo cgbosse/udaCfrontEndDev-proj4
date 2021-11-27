@@ -72,20 +72,15 @@ app.get('/testApi', function (req, res) {
     console.log("Sending Response from Server /testApi")
 })
 
-
-
 app.get('/textToAnalyze', function (req, res) {
     res.send(apiResponseJson);
     console.log("Sending Response from Server from textToAnalyze")    
 });
 
-
 app.get('/apiResponseJson', function (req, res) {
     res.send(apiResponseJson);
     console.log("Sending Response from Server /apiResponseJson with the meaningCloud response object.")    
 });
-
-
 
 // CB -- Create log of data for sending call to the API
 // ---------- POST method route ---------- 
@@ -111,7 +106,7 @@ function formData (req, res) {
  // ---------------- Function for Sentiment Analysis --------------
  let sentiment = async function(text2) {
 
-    // Boiler Template MeaningCloud
+    // Part of Boiler Template MeaningCloud
     console.log(":::::::::Step 03 :::::::::");
     console.log("::::Inside sentiment()::::::: " + text2);
 
@@ -140,27 +135,4 @@ function formData (req, res) {
     catch(error) {
         console.log('error', error);
     }
-    /*
-    .then(response => ({
-        status: response.status, 
-        body: response.json()
-    }))
-    //.then(({ status, body }) => console.log(status, body))
-    .then(({ status, body }) => console.log("Status :::::" + status + "\nBody :::::" + body))
-    .catch(error => console.log('error', error));
-    */
-/*
-    console.log("::::::::::::::::RESPONSE::::::::::::::::");
-    console.log(response);
-    
-    (function(response) {
-        apiResponseJson = response.json();
-    })();
-
-    console.log("::::::::::::::::RESPONSE::::::::::::::::");
-    console.log(apiResponseJson);
-
-    return response
-*/
 };
-
