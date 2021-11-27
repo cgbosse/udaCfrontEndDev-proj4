@@ -3,7 +3,7 @@ form {
     border-radius: 3px;
     padding: 40px;
     background-color: yellowgreen;
-    min-height: 400px;
+    min-height: 300px;
 }
 
 input {
@@ -23,7 +23,10 @@ form input[type="submit"] {
 
 form textarea { 
     width: 100%;
-    rows: 50;
+    height: 200px;
+    border-radius: 10px;
+    box-sizing: border-box;
+
 }
 
 #resultsApi {
@@ -42,13 +45,29 @@ form textarea {
     background-color: yellowgreen;
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    padding: 5px;
 }
 
 .resultsboxitem {
-    flex-grow: 1 ;
-    align-items: stretch;
+    min-width: 200px;
+    text-align: right;
+    
 }
+
+.resultsboxitem {
+    min-width: 200px;
+    text-align: right;
+    
+}
+
+.resultsboxitemapi {
+    min-width: 200px;
+    padding-left: 10px;
+    text-align: left;
+    
+}
+
+
 
 .results {
     border-style: dotted;
