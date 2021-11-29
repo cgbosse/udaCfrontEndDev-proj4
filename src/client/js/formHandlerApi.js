@@ -11,9 +11,8 @@ function handleSubmitApi(event) {
     let formTextJson = {formText};
       
     //Calls the postData function to post the form text to the server
-    Client.postData('/textToAnalyze', formTextJson)
-      //.then (result => Client.getServerData(result))
-      .then (result => {
+    Client.postData('./textToAnalyze', formTextJson)
+       .then (result => {
           Client.serverApiResults(result);
           return "Finished"
       })
