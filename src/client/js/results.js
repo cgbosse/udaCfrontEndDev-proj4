@@ -9,6 +9,8 @@ const serverApiResults = async function(res){
   document.getElementById('subjectivity').innerHTML = res.subjectivity;
   document.getElementById('confidence').innerHTML = res.confidence;
   document.getElementById('irony').innerHTML = res.irony
+
+  return res
 }
 
 export {serverApiResults}
