@@ -22,7 +22,11 @@ __Note:__
 
 Here you will find detailed information as to the steps and notes from the Udacity course that had to be implemented in addition some commands I hade to use repetitively.
 
+<<<<<<< Updated upstream
 - [REQUIREMENTS](documentation/REQUIREMENTS.md)
+=======
+- [Requirements](documentation/REQUIREMENTS.md)
+>>>>>>> Stashed changes
 - [STEPS_Stage01](documentation/STEPS_Stage01.md)
 - [STEPS_Stage02](documentation/STEPS_Stage02.md)
 - [STEPS_Stage03](documentation/STEPS_Stage03.md)
