@@ -24,9 +24,6 @@ Here you will find detailed information as to the steps and notes from the Udaci
 
 <<<<<<< Updated upstream
 - [REQUIREMENTS](documentation/REQUIREMENTS.md)
-=======
-- [Requirements](documentation/REQUIREMENTS.md)
->>>>>>> Stashed changes
 - [STEPS_Stage01](documentation/STEPS_Stage01.md)
 - [STEPS_Stage02](documentation/STEPS_Stage02.md)
 - [STEPS_Stage03](documentation/STEPS_Stage03.md)
