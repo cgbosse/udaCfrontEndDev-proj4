@@ -11,16 +11,58 @@ describe("Testing that the response contains the different properties required f
                 agreement: "Agreement",
                 subjectivity: "Subjectivity",
                 confidence: "100",
-                irony: "Irony",  
+                irony: "Irony"  
             } 
-            // Define the expected output, if any, in the form of variables/array
-            const testResponseJsonContent = {
-                agreement: expect.stringMatching("Agreement"),
-                subjectivity: expect.stringMatching("Subjectivity"),
-                confidence: expect.stringMatching("100"),
-                irony: expect.stringMatching("Irony"),  
-            } 
+         // Set up our document body
+            document.body.innerHTML = `
+                <section class="results">
+                <h2>Form Results</h2>
+                <div class="resultsbox">
+                    <div class="resultsboxitem">
+                    Agreement:
+                    </div>
+                    <div id="agreement" class="resultsboxitemapi">
+                        --------------
+                    </div>
+                </div>
+                <div class="resultsbox">
+                    <div class="resultsboxitem">
+                    Subjectivity:
+                    </div>
+                    <div id="subjectivity" class="resultsboxitemapi">
+                        --------------
+                    </div>
+                </div>
+                <div class="resultsbox">
+                    <div class="resultsboxitem">
+                    Confidence:
+                    </div>
+                    <div id="confidence" class="resultsboxitemapi">
+                        --------------
+                    </div>
+                </div>
+                <div class="resultsbox">
+                    <div class="resultsboxitem">
+                    Irony:
+                    </div>
+                    <div id="irony" class="resultsboxitemapi">
+                        --------------
+                    </div>
+                </div>
+                </section>
+            `;
+           
+            const agreement = document.getElementById('agreement');
+            const subjectivity = document.getElementById('subjectivity');
+            const confidence = document.getElementById('confidence');
+            const irony = document.getElementById('irony');
+
             // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
             // The general syntax is `expect(myFunction(arg1, arg2, ...)).toEqual(expectedValue);`, where `toEqual()` is a matcher
-            expect(serverApiResults(testResponseJson)).toMatchObject(testResponseJsonContent);
+            expect(serverApiResults(testResponseJson));
+            expect(agreement.innerHTML).toBe("Agreement");
+            expect(subjectivity.innerHTML).toBe("Subjectivity");
+            expect(confidence.innerHTML).toBe("100");
+            expect(irony.innerHTML).toBe("Irony");         
+            //expect(serverApiResults(testResponseJson)).resolves.toMatchObject(testResponseJsonContent);
 })});

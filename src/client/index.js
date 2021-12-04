@@ -6,6 +6,7 @@ import { postData } from './js/postData'
 import { serverApiResults } from './js/results'
 import { handleSubmitApi } from './js/formHandlerApi'
 
+
 import './styles/resets.scss'
 import './styles/base.scss'
 import './styles/footer.scss'
