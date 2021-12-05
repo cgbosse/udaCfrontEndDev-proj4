@@ -13,8 +13,10 @@ This repo for the 4th project for the Udacity Front End Developer  project. The 
 
 Each repository branch reflects the different stages or progress to complete the requirements.  
 
-__Note:__  
- During the process of creating these I came to conclude that some of the previously generated code was not needed, so that will find some code that is not existant at later branches.  
+__Notes:__  
+
+- During the process of creating these I came to conclude that some of the previously generated code was not needed, so that will find some code that is not existant at later branches.  
+- In order to run the code you will require node version 11.15.0 and nvm version 1.1.8.  
 
 ## Available Documentation
 
@@ -22,8 +24,7 @@ __Note:__
 
 Here you will find detailed information as to the steps and notes from the Udacity course that had to be implemented in addition some commands I hade to use repetitively.
 
-<<<<<<< Updated upstream
-- [REQUIREMENTS](documentation/REQUIREMENTS.md)
+- [REQUIREMENTS](documentation/REQUIREMENTS.md)  
 - [STEPS_Stage01](documentation/STEPS_Stage01.md)
 - [STEPS_Stage02](documentation/STEPS_Stage02.md)
 - [STEPS_Stage03](documentation/STEPS_Stage03.md)

@@ -10,7 +10,7 @@ const serverApiResults = async function(res){
   document.getElementById('confidence').innerHTML = res.confidence;
   document.getElementById('irony').innerHTML = res.irony
 
-  //return res
+  return res
 }
 
 export {serverApiResults}
