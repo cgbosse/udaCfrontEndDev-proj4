@@ -17,6 +17,7 @@ __Notes:__
 
 - During the process of creating these I came to conclude that some of the previously generated code was not needed, so that will find some code that is not existant at later branches.  
 - In order to run the code you will require node version 11.15.0 and nvm version 1.1.8.  
+- Also you will have to create a .env file with your API Key from https://openweathermap.org/ in order to call the information from the API.
 
 ## Available Documentation
 
